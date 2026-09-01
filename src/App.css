@@ -1,0 +1,38 @@
+/* App specific styles */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Scroll Progress Bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-accent), #a855f7);
+  transform-origin: 0%;
+  z-index: 9999;
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.loader-text {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
