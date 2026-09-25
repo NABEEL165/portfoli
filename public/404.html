@@ -2,33 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Redirecting to index.html</title>
+    <title>Redirecting...</title>
     <script>
-      var segmentCount = 0;
-      var l = window.location;
-      l.replace(
-        l.protocol +
-          '//' +
-          l.hostname +
-          (l.port ? ':' + l.port : '') +
-          l.pathname
-            .split('/')
-            .slice(0, -1 * segmentCount + 1)
-            .join('/') +
-          '/portfoli/' +
-          l.pathname
-            .slice(1)
-            .split('/')
-            .slice(segmentCount)
-            .join('/') +
-          l.search +
-          l.hash
-      );
+      window.location.href = '/portfoli/';
     </script>
   </head>
   <body>
     <noscript>
       <meta http-equiv="refresh" content="0; url=/portfoli/" />
+      <p>Redirecting to <a href="/portfoli/">/portfoli/</a>...</p>
     </noscript>
   </body>
 </html>
