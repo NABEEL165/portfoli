@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import punyamImage from '../assets/11a3af08a74e52eb3f5bad010218fa28.jpg';
 import './Projects.css';
 
 const projects = [
@@ -9,30 +10,16 @@ const projects = [
     description: "Full-stack waste management portal for scheduling pickups & tracking.",
     image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80",
     tags: ["Python", "Django", "MySQL", "REST API"],
+    category: "Full Stack",
     github: "#",
-    live: "#"
-  },
-  {
-    title: "LumosKart E-Commerce",
-    description: "Influencer-driven shopping platform with cart & checkout. Dual deployment.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80",
-    tags: ["Django", "MySQL", "Bootstrap"],
-    github: "#",
-    live: "https://www.lumoskart.com/"
-  },
-  {
-    title: "Nakshathra Gold ERP",
-    description: "Custom Odoo 17 ERP: modules, PDF reports & dashboards.",
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
-    tags: ["Odoo 17", "Python", "ERP"],
-    github: "#",
-    live: "#"
+    live: "https://lumoskart.pythonanywhere.com/"
   },
   {
     title: "Cab Booking Website",
     description: "Responsive UI with dynamic elements for cab booking services.",
     image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80",
     tags: ["HTML", "CSS", "JS", "UI/UX"],
+    category: "Frontend",
     github: "#",
     live: "https://nabeel165.github.io/ride/"
   },
@@ -41,6 +28,7 @@ const projects = [
     description: "ChatGPT-inspired conversational interface built with modern AI integration.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
     tags: ["React", "AI", "Frontend"],
+    category: "AI",
     github: "#",
     live: "https://ai-chatter-buddy-42.lovable.app/"
   },
@@ -49,8 +37,27 @@ const projects = [
     description: "Animated, highly responsive cafe website to showcase products and locations.",
     image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80",
     tags: ["HTML5", "CSS3", "Animations"],
+    category: "Frontend",
     github: "#",
     live: "https://cerulean-gaufre-0a5d81.netlify.app/"
+  },
+  {
+    title: "Punyam Astrologer Platform",
+    description: "Astrologer e-commerce platform for spiritual products and services.",
+    image: punyamImage,
+    tags: ["E-commerce", "Web", "Platform"],
+    category: "Full Stack",
+    github: "#",
+    live: "https://punyam.vercel.app/"
+  },
+  {
+    title: "Elaamy Photo Frame Platform",
+    description: "Photo frame platform for custom frames and personalized photo products.",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80",
+    tags: ["E-commerce", "Web", "Platform"],
+    category: "Full Stack",
+    github: "#",
+    live: "https://www.elaamy.com/"
   }
 ];
 
@@ -69,13 +76,13 @@ const Projects = () => {
           <p className="section-subtitle">Real-world applications and deployments I've built.</p>
         </motion.div>
 
-        <div className="projects-grid">
+        <div className="projects-container">
           {projects.map((project, index) => (
-            <motion.div 
+            <motion.div
               key={index}
-              className="project-card glass"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="project-card"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
@@ -105,6 +112,36 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+      </div>
+
+      {/* Marquee - Full Width */}
+      <div className="projects-marquee">
+        <div className="marquee-content">
+          <span className="marquee-item">Python</span>
+          <span className="marquee-item">Django</span>
+          <span className="marquee-item">React</span>
+          <span className="marquee-item">JavaScript</span>
+          <span className="marquee-item">HTML5</span>
+          <span className="marquee-item">CSS3</span>
+          <span className="marquee-item">MySQL</span>
+          <span className="marquee-item">REST API</span>
+          <span className="marquee-item">AI</span>
+          <span className="marquee-item">E-commerce</span>
+          <span className="marquee-item">UI/UX</span>
+          <span className="marquee-item">Animations</span>
+          <span className="marquee-item">Python</span>
+          <span className="marquee-item">Django</span>
+          <span className="marquee-item">React</span>
+          <span className="marquee-item">JavaScript</span>
+          <span className="marquee-item">HTML5</span>
+          <span className="marquee-item">CSS3</span>
+          <span className="marquee-item">MySQL</span>
+          <span className="marquee-item">REST API</span>
+          <span className="marquee-item">AI</span>
+          <span className="marquee-item">E-commerce</span>
+          <span className="marquee-item">UI/UX</span>
+          <span className="marquee-item">Animations</span>
         </div>
       </div>
     </section>

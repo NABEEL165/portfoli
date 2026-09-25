@@ -18,9 +18,8 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Gallery', href: '#portfolio' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -36,18 +35,20 @@ const Navbar = () => {
           Nabeel<span className="text-gradient"> M</span>
         </a>
 
-        <div className="nav-links desktop-only">
-          {navLinks.map((link, index) => (
-            <a key={index} href={link.href} className="nav-link">
-              {link.name}
-            </a>
-          ))}
-        </div>
+        <div className="nav-right desktop-only">
+          <div className="nav-links">
+            {navLinks.map((link, index) => (
+              <a key={index} href={link.href} className="nav-link">
+                {link.name}
+              </a>
+            ))}
+          </div>
 
-        <div className="nav-socials desktop-only">
-          <a href="#" className="social-icon"><FiGithub /></a>
-          <a href="#" className="social-icon"><FiLinkedin /></a>
-          <a href="#" className="social-icon"><FiTwitter /></a>
+          <div className="nav-socials">
+            <a href="#" className="social-icon"><FiGithub /></a>
+            <a href="https://www.linkedin.com/in/mohammed-nabeel-47a904279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="social-icon"><FiLinkedin /></a>
+            <a href="#" className="social-icon"><FiTwitter /></a>
+          </div>
         </div>
 
         <div className="mobile-toggle mobile-only" onClick={toggleMenu}>
@@ -75,7 +76,7 @@ const Navbar = () => {
           ))}
           <div className="mobile-socials">
             <a href="#" className="social-icon"><FiGithub /></a>
-            <a href="#" className="social-icon"><FiLinkedin /></a>
+            <a href="https://www.linkedin.com/in/mohammed-nabeel-47a904279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="social-icon"><FiLinkedin /></a>
             <a href="#" className="social-icon"><FiTwitter /></a>
           </div>
         </motion.div>

@@ -4,12 +4,14 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
+import PortfolioGallery from './components/PortfolioGallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [greeting, setGreeting] = useState('');
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -18,6 +20,16 @@ function App() {
   });
 
   useEffect(() => {
+    // Determine greeting based on time
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      setGreeting('Good morning');
+    } else if (hour < 18) {
+      setGreeting('Good afternoon');
+    } else {
+      setGreeting('Good evening');
+    }
+
     // Simulate a brief loading time for the opening animation
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -41,13 +53,13 @@ function App() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <motion.div 
+          <motion.div
             className="loader-text text-gradient"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
           >
-            MNM.
+            {greeting}
           </motion.div>
         </motion.div>
       ) : (
@@ -61,6 +73,7 @@ function App() {
           <Hero />
           <About />
           <Projects />
+          <PortfolioGallery />
           <Contact />
           <Footer />
         </motion.div>
